@@ -1,0 +1,24 @@
+﻿@model ChatBot.ViewModels.ChatResponseVm
+
+<h3>Knowledge Base Assistant</h3>
+
+<form method="post" asp-action="Ask">
+    <div class="mb-3">
+        <textarea name="Question"
+                  class="form-control"
+                  rows="3"
+                  placeholder="Ask a question..."
+                  required></textarea>
+    </div>
+
+    <button class="btn btn-primary">Ask</button>
+</form>
+
+@if (Model?.Answer != null)
+{
+    <hr />
+    <h5>Answer</h5>
+    <div class="alert alert-light border">
+        @Model.Answer
+    </div>
+}

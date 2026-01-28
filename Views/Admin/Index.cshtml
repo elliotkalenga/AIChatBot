@@ -1,0 +1,27 @@
+﻿@model List<ChatBot.Models.KnowledgeDocument>
+
+<h3>Knowledge Documents</h3>
+
+<a class="btn btn-success mb-3" asp-action="Upload">Upload Document</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>File Name</th>
+            <th>Source</th>
+            <th>Uploaded By</th>
+            <th>Created</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var doc in Model)
+        {
+            <tr>
+                <td>@doc.FileName</td>
+                <td>@doc.SourceType</td>
+                <td>@doc.UploadedBy</td>
+                <td>@doc.CreatedAt.ToLocalTime()</td>
+            </tr>
+        }
+    </tbody>
+</table>

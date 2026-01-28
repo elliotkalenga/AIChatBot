@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Upload Knowledge Document";
+}
+
+<h3>Upload Knowledge Document</h3>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"]</div>
+}
+
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-2">
+        <input type="file" name="file" class="form-control" required />
+    </div>
+    <button class="btn btn-primary">Upload</button>
+    <a class="btn btn-secondary" href="/Admin/Index">Back to Documents</a>
+</form>
